@@ -8,6 +8,7 @@ import Art7 from '../image/art7.jpg';
 import Art8 from '../image/art8.jpg';
 import Art9 from '../image/art9.jpg';
 import Background from '../image/background.jpg';
+import WelcomeCard from '../components/WelcomeCard';
 
 // Sample images for the gallery
 const images = [
@@ -61,7 +62,7 @@ const images = [
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-10" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h1 className="text-4xl font-bold text-center mb-10 text-white">S Y O N</h1>
+      <WelcomeCard/>
       <div className="flex flex-wrap justify-center gap-4">
         {images.map((image, index) => (
           <div

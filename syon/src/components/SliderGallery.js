@@ -25,17 +25,22 @@ const SliderGallery = () => {
     setSliderWidth(width);
   };
 
-useEffect(() => {
+  useEffect(() => {
     makeSize();
+    const resolution = { x: window.innerWidth, y: window.innerHeight };
+
     const app = new PIXI.Application({ width: resolution.x, height: resolution.y });
     document.body.appendChild(app.view);
+
     const bg = new PIXI.Sprite(PIXI.Texture.WHITE);
     bg.width = resolution.x;
     bg.height = resolution.y;
     bg.tint = 0x222222;
     app.stage.addChild(bg);
+
     const container = new PIXI.Container();
     app.stage.addChild(container);
+
     sliderImgsRef.current.forEach((slide, idx) => {
       const img = slide.querySelector('img');
       const imgRect = img.getBoundingClientRect();
@@ -48,7 +53,10 @@ useEffect(() => {
       img.style.display = 'none';
       setPixiImgs(prevPixiImgs => [...prevPixiImgs, pixiImg]);
     });
-    const shaderCode = document.getElementById("shader").innerHTML;
+
+    const shaderElement = document.getElementById("shader");
+    const shaderCode = shaderElement ? shaderElement.innerHTML : '';
+
     const simpleShader = new PIXI.Filter('', shaderCode, {
       u_mouse: mousePos,
       u_resolution: resolution,
@@ -57,9 +65,12 @@ useEffect(() => {
     });
     simpleShader.padding = 200;
     app.stage.filters = [simpleShader];
+
     app.ticker.add(() => {
       container.x = canvasPos.x;
       setTime(prevTime => prevTime + 0.01);
+      simpleShader.uniforms.u_time = time;
+      simpleShader.uniforms.u_mouse = [mousePos.x, mousePos.y];
     });
 
     const loader = new PIXI.Loader();
@@ -75,8 +86,7 @@ useEffect(() => {
         app.destroy(true);
       }
     };
-  }, [resolution]);
-
+  }, [resolution, time, mousePos]);
 
   const onMouseDown = (e) => {
     e.preventDefault();
@@ -120,7 +130,7 @@ useEffect(() => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" onMouseDown={onMouseDown} onMouseMove={onMouseMove} onMouseUp={onMouseUp} onWheel={handleScroll}>
       <div className="slider">
         <div className="slide" ref={el => sliderImgsRef.current[0] = el}>
           <img className="slide-img" src={img1} alt="Slide 1" />

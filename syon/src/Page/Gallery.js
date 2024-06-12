@@ -5,13 +5,14 @@ import img1 from '../image/art1.jpg';
 import img2 from '../image/art2.jpg';
 import img3 from '../image/art3.jpg';
 import img4 from '../image/art5.jpg';
-import img5 from '../image/art6.jpg';
 import img6 from '../image/art8.jpg';
+import img7 from '../image/gallery.jpeg';
+
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import arrow icons
 
 export default function Gallery() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const images = [img1, img2, img3, img4, img5, img6];
+  const images = [img1, img2, img3, img4, img7, img6];
 
   const appRef = useRef(null);
   const containerRef = useRef(null);
@@ -80,16 +81,19 @@ export default function Gallery() {
   return (
     <div className="flex flex-col justify-center items-center h-screen" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h1 className="text-4xl font-bold mb-8 text-center text-white">Our Gallery</h1>
-      <div className="flex flex-wrap justify-center max-w-screen-lg">
-        {/* Map over images */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-screen-lg">
         {images.map((image, index) => (
-          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 p-2">
-            <img src={image} alt={`Image ${index + 1}`} className="w-full h-auto cursor-pointer" onClick={() => handleImageClick(index)} />
+          <div key={index} className="relative overflow-hidden">
+            <img 
+              src={image} 
+              alt={`Image ${index + 1}`} 
+              className="w-full h-auto cursor-pointer transform transition-transform duration-300 hover:scale-105 object-cover" 
+              onClick={() => handleImageClick(index)} 
+            />
           </div>
         ))}
       </div>
 
-      {/* Modal */}
       {selectedImageIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50">
           <div className="absolute w-full h-full bg-black opacity-50" onClick={handleCloseModal}></div>
@@ -97,9 +101,13 @@ export default function Gallery() {
             <div className="bg-white p-8 rounded-lg max-w-screen-lg" ref={appRef}></div>
             <button className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white text-2xl" onClick={handlePrevImage}><FaArrowLeft /></button>
             <button className="absolute top-1/2 right-5 transform -translate-y-1/2 text-white text-2xl" onClick={handleNextImage}><FaArrowRight /></button>
-            {/* Display selected image */}
             {selectedImageIndex !== null && (
-              <img src={images[selectedImageIndex]} alt={`Image ${selectedImageIndex + 1}`} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-full max-h-full" />
+              <img 
+                src={images[selectedImageIndex]} 
+                alt={`Image ${selectedImageIndex + 1}`} 
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" 
+                style={{ width: '640px', height: '600px' }} 
+              />
             )}
           </div>
         </div>

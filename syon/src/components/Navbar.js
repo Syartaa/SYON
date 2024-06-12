@@ -29,19 +29,19 @@ const Navbar = () => {
         <div className={`w-full ${isMobileMenuOpen ? 'block' : 'hidden'}`} id="navbar-hamburger">
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-transparent dark:bg-transparent">
             <li>
-              <a href="/home" className="block py-2 px-3 text-white hover:bg-red-600  rounded  dark:text-white" >Home</a>
+              <Link to="/home" className="block py-2 px-3 text-white hover:bg-red-600 rounded dark:text-white">Home</Link>
             </li>
             <li>
-              <a href="/about" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400  dark:hover:text-white">About us</a>
+              <Link to="/about" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400 dark:hover:text-white">About us</Link>
             </li>
             <li>
-              <a href="/contact" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white md:dark:hover:text-white dark:text-gray-400  dark:hover:text-white">Contact</a>
+              <Link to="/pieces" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Art Pieces</Link>
             </li>
             <li>
-              <Link to="/pieces" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Art Pieces</Link> {/* Link to the Art Pieces page */}
+              <Link to="/gallery" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400 dark:hover:text-white">Gallery</Link>
             </li>
             <li>
-              <a href="/gallary" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400  dark:hover:text-white">Gallary</a>
+              <Link to="/booking" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400 dark:hover:text-white">Booking</Link>
             </li>
           </ul>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../image/s.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import logo from '../image/s.png';;
 
 const Navbar = () => {
   // State to handle the visibility of the mobile menu
@@ -8,9 +9,9 @@ const Navbar = () => {
   return (
     <nav className="border-gray-200 bg-gradient-to-r from-red-500 to-orange-500 dark:border-gray-700">
       <div className="flex flex-wrap items-center justify-between mx-auto p-4 ml-5 mr-5">
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse"> {/* Link to the home page */}
           <img src={logo} className="h-15 w-20" alt="Logo" />
-        </a>
+        </Link>
         {/* Mobile menu button */}
         <button
           type="button"
@@ -38,6 +39,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="/gallary" className="block py-2 px-3 text-gray-900 rounded hover:bg-red-600 hover:text-white dark:text-gray-400  dark:hover:text-white">Gallary</a>
+              <Link to="/pieces" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Art Pieces</Link> {/* Link to the Art Pieces page */}
             </li>
           </ul>
         </div>

@@ -5,6 +5,8 @@ import Home from './Page/Home';
 import About from './Page/About';
 import Layout from './Page/Layout';
 import ContactUs from './Page/ContactUs.JS'
+import ArtPieces from './Page/ArtPieces';
+
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route path="/home" element={<Home />}/>
       <Route path="/about" element={<About />}/>
       <Route path="/contact" element={<ContactUs />}/>
+      <Route path="/pieces" element={<ArtPieces />}/>
+     
     </Route>
     </Routes>
 

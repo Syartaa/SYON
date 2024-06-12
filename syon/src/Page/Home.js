@@ -7,53 +7,54 @@ import Art6 from '../image/art6.jpg';
 import Art7 from '../image/art7.jpg';
 import Art8 from '../image/art8.jpg';
 import Art9 from '../image/art9.jpg';
+import Art10 from '../image/art10.jpg'
 import Background from '../image/background.jpg';
 
 // Sample images for the gallery
 const images = [
   {
     src: Art1,
-    title: 'Artwork 1',
+    title: 'Serenade',
     description: 'A vibrant landscape capturing the essence of nature.',
   },
   {
     src: Art2,
-    title: 'Artwork 2',
+    title: 'Whispers',
     description: 'An abstract piece with bold colors and dynamic shapes.',
   },
   {
     src: Art3,
-    title: 'Artwork 3',
+    title: 'Eclipse',
     description: 'A serene depiction of a calm seaside at dusk.',
   },
   {
     src: Art5,
-    title: 'Artwork 4',
+    title: 'Harmony',
     description: 'A detailed portrait showcasing deep emotion.',
   },
   {
     src: Art6,
-    title: 'Artwork 5',
+    title: 'Radiance',
     description: 'A whimsical interpretation of a bustling cityscape.',
   },
   {
     src: Art7,
-    title: 'Artwork 6',
+    title: 'Echoes',
     description: 'A minimalist design with clean lines and soft hues.',
   },
   {
     src: Art8,
-    title: 'Artwork 7',
+    title: 'Nebula',
     description: 'An explosion of colors representing a vibrant festival.',
   },
   {
     src: Art9,
-    title: 'Artwork 8',
+    title: 'Cascade',
     description: 'A tranquil forest scene with dappled sunlight.',
   },
   {
-    src: Art9,
-    title: 'Artwork 9',
+    src: Art10,
+    title: 'Enigma',
     description: 'An intricate pattern work inspired by traditional motifs.',
   },
 ];

@@ -7,6 +7,7 @@ import Layout from './Page/Layout';
 import ArtPieces from './Page/ArtPieces';
 import Gallery from './Page/Gallery';
 import BookingPage from './Page/Booking';
+import Artist from './Page/Artist';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="pieces" element={<ArtPieces />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="booking" element={<BookingPage />} />
+          <Route path="artists" element={<Artist />} />
         </Route>
       </Routes>
     </Router>

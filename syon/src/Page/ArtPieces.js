@@ -11,27 +11,27 @@ import foto6 from '../image/foto6.jpg';
 const artPieces = [
   {
     image: foto1,
-    description: 'A beautiful painting of a serene landscape.',
+    description: 'The Enigmatic Mona Lisa, by Leonardo da Vinci, is a renowned portrait of a woman with a mysterious smile, set against a distant landscape.',
   },
   {
     image: foto2,
-    description: 'A stunning piece depicting modern art.',
+    description: 'Eternal Bond: Mother and Child, a depiction of a mother holding her child, symbolizing the bond of love and protection between them.',
   },
   {
     image: foto3,
-    description: 'An exquisite portrayal of the ocean.',
+    description: 'The Majestic Peacock, peacock is known for its vibrant blue and green feathers, especially the radiant colors, unique art',
   },
   {
     image: foto4,
-    description: 'An abstract piece full of vibrant colors.',
+    description: 'The Timeless Rose, rose is a fragrant flower with velvety petals, available in various colors like red, pink, and white, symbolizing love and beauty.',
   },
   {
     image: foto5,
-    description: 'A modern artwork with a unique perspective.',
+    description: 'Expressions of the Human Face,the face is the front part of the head, including the eyes, nose, mouth, and capable of expressing a range of emotions.',
   },
   {
     image: foto6,
-    description: 'Very beautiful exquisite colors',
+    description: 'The Vibrant World of Colors,colors are visual perceptions like red, blue, and green, each evoking different emotions and used widely in art and design.',
   },
 ];
 
